@@ -15,11 +15,11 @@ explore: lgcns_golla_nxuser {}
 explore: lgcns_golla_nxuser2 {
   view_name: lgcns_golla_nxuser2
   label: "lgcns_golla_nxuser2"
-  join: lgcns_golla_survey_unpivot {
-    type: left_outer
-    sql_on: ${lgcns_golla_nxuser2.nexonsn} = ${lgcns_golla_survey_unpivot.nexonsn} ;;
-    relationship: many_to_one
-  }
+  #join: lgcns_golla_survey_unpivot {
+  #  type: left_outer
+  #  sql_on: ${lgcns_golla_nxuser2.nexonsn} = ${lgcns_golla_survey_unpivot.nexonsn} ;;
+  #  relationship: many_to_one
+  #}
 }
 explore: lgcns_golla_survey_pivot {}
 
@@ -27,6 +27,11 @@ explore: lgcns_golla_survey_unpivot {
   join: lgcns_golla_surveyform {
     type: left_outer
     sql_on: ${lgcns_golla_survey_unpivot.question_id} = ${lgcns_golla_surveyform.question_id} ;;
+    relationship: many_to_one
+  }
+  join: lgcns_golla_nxuser2 {
+    type: left_outer
+    sql_on: ${lgcns_golla_survey_unpivot.nexonsn} = ${lgcns_golla_nxuser2.nexonsn} ;;
     relationship: many_to_one
   }
 }
