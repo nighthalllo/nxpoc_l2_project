@@ -31,7 +31,7 @@ explore: lgcns_golla_survey_unpivot {
   }
 }
 
-explore: lgcns_golla_surveyform { }
+explore: lgcns_golla_surveyform {}
 
 explore: nxpoc_l2 {
   extends: [lgcns_golla_nxuser2]
