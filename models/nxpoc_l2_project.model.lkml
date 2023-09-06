@@ -24,6 +24,7 @@ explore: lgcns_golla_nxuser2 {
 explore: lgcns_golla_survey_pivot {}
 
 explore: lgcns_golla_survey_unpivot {
+  label: "lgcns_golla_survey_unpivot"
   join: lgcns_golla_surveyform {
     type: left_outer
     sql_on: ${lgcns_golla_survey_unpivot.question_id} = ${lgcns_golla_surveyform.question_id} ;;
@@ -39,6 +40,6 @@ explore: lgcns_golla_survey_unpivot {
 explore: lgcns_golla_surveyform {}
 
 explore: nxpoc_l2 {
-  extends: [lgcns_golla_nxuser2]
+  extends: [lgcns_golla_survey_unpivot]
   label: "nxpoc_l2"
 }
