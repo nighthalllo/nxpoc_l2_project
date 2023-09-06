@@ -9,6 +9,10 @@ view: lgcns_golla_survey_unpivot {
     type: string
     sql: ${TABLE}.answer_content_list_exploded2_matrix_answer_contentlist_content ;;
   }
+  dimension: num_answer_content_list_exploded2_matrix_answer_contentlist_content {
+    type: number
+    sql: ${TABLE}.num_answer_content_list_exploded2_matrix_answer_contentlist_content ;;
+  }
   dimension: answer_id {
     type: number
     sql: ${TABLE}.answer_id ;;
