@@ -10,8 +10,8 @@ view: lgcns_golla_survey_unpivot {
     sql: ${TABLE}.answer_content_list_exploded2_matrix_answer_contentlist_content ;;
   }
   dimension: num_answer_content_list_exploded2_matrix_answer_contentlist_content {
-    type: string
-    sql: (substring(${TABLE}.answer_content_list_exploded2_matrix_answer_contentlist_content,1,1)) ;;
+    type: number
+    sql: to_number(substring(${TABLE}.answer_content_list_exploded2_matrix_answer_contentlist_content,1,1)) ;;
   }
   dimension: answer_id {
     type: number
