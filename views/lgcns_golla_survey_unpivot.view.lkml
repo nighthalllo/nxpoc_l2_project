@@ -40,4 +40,8 @@ view: lgcns_golla_survey_unpivot {
   measure: count {
     type: count
   }
+  measure: response {
+    type: string
+    sql: MAX(${TABLE}.answer_content_list_exploded2_matrix_answer_contentlist_content) ;;
+  }
 }
