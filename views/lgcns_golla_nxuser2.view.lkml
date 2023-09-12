@@ -65,6 +65,7 @@ view: lgcns_golla_nxuser2 {
     {% elsif dynamic_dimension_selection._parameter_value == 'return' %}
     ${new_or_return_user}
     {% else %}
+    "1"
     {% endif %} ;;
   }
   measure: count {
