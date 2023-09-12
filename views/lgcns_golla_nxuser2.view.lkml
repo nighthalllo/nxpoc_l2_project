@@ -39,16 +39,20 @@ view: lgcns_golla_nxuser2 {
   }
   parameter: dynamic_dimension_selection {
     type: unquoted
-    default_value: "segmentation"
+    default_value: "all"
+    allowed_value: {
+      value: "all"
+      label: "전체"
+    }
     allowed_value: {
       value: "segmentation"
-      label: "User_Segmentation"}
+      label: "유저 그룹"}
     allowed_value: {
       value: "group"
       label: "Survey_Group"}
     allowed_value: {
       value: "return"
-      label: "New_or_Return_User"}
+      label: "신규/복귀"}
   }
   dimension: dynamic_dimension {
     label_from_parameter: dynamic_dimension_selection
@@ -58,8 +62,9 @@ view: lgcns_golla_nxuser2 {
     ${user_segmentation}
     {% elsif dynamic_dimension_selection._parameter_value == 'group' %}
     ${suvey_group}
-    {% else %}
+    {% elsif dynamic_dimension_selection._parameter_value == 'return' %}
     ${new_or_return_user}
+    {% else %}
     {% endif %} ;;
   }
   measure: count {
