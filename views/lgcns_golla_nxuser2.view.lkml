@@ -37,6 +37,31 @@ view: lgcns_golla_nxuser2 {
     type: string
     sql: ${TABLE}.user_segmentation ;;
   }
+  parameter: dynamic_dimension_selection {
+    type: unquoted
+    default_value: "segmentation"
+    allowed_value: {
+      value: "segmentation"
+      label: "User_Segmentation"}
+    allowed_value: {
+      value: "group"
+      label: "Survey_Group"}
+    allowed_value: {
+      value: "return"
+      label: "New_or_Return_User"}
+  }
+  dimension: dynamic_dimension {
+    label_from_parameter: dynamic_dimension_selection
+    type: string
+    sql:
+    {% if dynamic_dimension_selection._parameter_value == 'segmentation' %}
+    ${user_segmentation}
+    {% elsif dynamic_dimension_selection._parameter_value == 'group' %}
+    ${suvey_group}
+    {% else %}
+    ${new_or_return_user}
+    {% endif %} ;;
+  }
   measure: count {
     type: count
   }
