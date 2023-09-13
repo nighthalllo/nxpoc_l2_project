@@ -46,10 +46,10 @@ view: lgcns_golla_nxuser2 {
     }
     allowed_value: {
       value: "segmentation"
-      label: "유저 그룹"}
+      label: "유저그룹"}
     allowed_value: {
       value: "group"
-      label: "Survey_Group"}
+      label: "설문그룹"}
     allowed_value: {
       value: "return"
       label: "신규/복귀"}
